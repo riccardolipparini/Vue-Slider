@@ -26,7 +26,8 @@ body{
     
 }
 .item{
-    display: none;
+    height: 100%;
+    display: none; 
     position: relative;
 }
 
