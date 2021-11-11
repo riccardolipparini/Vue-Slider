@@ -1,9 +1,10 @@
 var carousel = new Vue({
     el:"#container",
     data: {
+        activeSlide: 0,
         slides:[
             {
-                image: 'img/01.jpg',
+                image: `img/01.jpg`,
                 title: 'Svezia',
                 text:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
             },
@@ -28,6 +29,27 @@ var carousel = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.'
             }
         ],
+    },
+    methods: {
+        nextSlide: function(){
+            if(this.activeSlide === this.slides.length - 1){
+                this.activeSlide = 0;
+            }else{
+                this.activeSlide ++
+            }
+            
+            
+        },
+        prevSlide: function(){
+            if(this.activeSlide === 0){
+                this.activeSlide = this.slides.length - 1;
+            }else{
+                this.activeSlide --
+            }
+            
+            
+        }
+        
     }
 })
 
